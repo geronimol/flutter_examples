@@ -1,3 +1,4 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_examples/widgets/name_form_field.dart';
 import '../constants.dart';
@@ -30,6 +31,8 @@ class _CommonFormState extends State<CommonForm> {
   final _formKey = GlobalKey<FormState>();
   final controllerFirstName = TextEditingController();
   final controllerLastName = TextEditingController();
+  final controllerEmail = TextEditingController();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   @override
   Widget build(BuildContext context) {
@@ -37,28 +40,66 @@ class _CommonFormState extends State<CommonForm> {
       padding: const EdgeInsets.all(20),
       child: Form(
         key: _formKey,
-        child: Column(
-          children: [
-            /// First Name
-            NameFormField(
-              controller: controllerFirstName,
-              label: 'First Name',
-              errorMessage: 'Please enter your first name.',
-            ),
+        autovalidateMode: autovalidateMode,
+        child: AutofillGroup(
+          child: Column(
+            children: [
+              /// First Name
+              NameFormField(
+                controller: controllerFirstName,
+                label: 'First Name',
+                errorMessage: 'Please enter your first name.',
+                autofillHints: const [AutofillHints.givenName],
+              ),
 
-            const SizedBox(height: kDefaultPadding,),
+              const SizedBox(height: kDefaultPadding,),
 
-            /// Last Name
-            NameFormField(
-              controller: controllerLastName,
-              label: 'Last Name',
-              errorMessage: 'Please enter your last name.',
-            ),
+              /// Last Name
+              NameFormField(
+                controller: controllerLastName,
+                label: 'Last Name',
+                errorMessage: 'Please enter your last name.',
+                autofillHints: const [AutofillHints.familyName],
+              ),
 
-            const SizedBox(height: 15,),
+              const SizedBox(height: kDefaultPadding,),
 
-            ElevatedButton(onPressed: onConfirmButtonPressed, child: const Text('CONFIRM')),
-          ],
+              /// Email
+              TextFormField(
+                decoration: InputDecoration(
+                  label: const Text('Email'),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0),
+                    borderSide:  const BorderSide(color: Colors.grey ),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  filled: true,
+                  hintStyle: TextStyle(color: Colors.grey[500]),
+                  hintText: 'Type in your text',
+                  fillColor: Colors.white70,
+                  prefixIcon: const Icon(Icons.email),
+                ),
+                controller: controllerEmail,
+                textInputAction: TextInputAction.next,
+                keyboardType: TextInputType.emailAddress,
+                autocorrect: false,
+                autovalidateMode: AutovalidateMode.disabled,
+                autofillHints: const [AutofillHints.email],
+                validator: (s) {
+                  if(s == null || s.trim().isEmpty || !EmailValidator.validate(s)) {
+                    return 'Please enter a valid email.';
+                  }
+                  return null;
+                },
+              ),
+
+              const SizedBox(height: 15,),
+
+              ElevatedButton(onPressed: onConfirmButtonPressed, child: const Text('CONFIRM')),
+            ],
+          ),
         ),
       ),
     );
@@ -70,6 +111,10 @@ class _CommonFormState extends State<CommonForm> {
       final message = 'Thank you ${controllerFirstName.text} ${controllerLastName.text}.';
       ScaffoldMessenger.of(context)
           .showSnackBar(SnackBar(content: Text(message), duration: const Duration(seconds: 5),));
+    } else {
+      setState(() {
+        autovalidateMode = AutovalidateMode.always;
+      });
     }
   }
 }
