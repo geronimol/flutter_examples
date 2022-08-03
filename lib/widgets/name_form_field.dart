@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class NameFormField extends StatelessWidget {
-  const NameFormField({Key? key, required this.controller, required this.label, required this.errorMessage}) : super(key: key);
+  const NameFormField({Key? key, required this.controller, required this.label, required this.errorMessage, required this.autofillHints}) : super(key: key);
 
   final TextEditingController controller;
+  final List<String> autofillHints;
   final String label, errorMessage;
 
   @override
@@ -23,11 +24,14 @@ class NameFormField extends StatelessWidget {
         hintStyle: TextStyle(color: Colors.grey[500]),
         hintText: 'Type in your text',
         fillColor: Colors.white70,
+        prefixIcon: const Icon(Icons.account_circle),
       ),
       controller: controller,
+      textInputAction: TextInputAction.next,
       keyboardType: TextInputType.name,
       autocorrect: false,
       autovalidateMode: AutovalidateMode.disabled,
+      autofillHints: autofillHints,
       inputFormatters: [
         FilteringTextInputFormatter.allow(RegExp(r'^[a-zA-ZñÑ\s]+$')),
       ],
