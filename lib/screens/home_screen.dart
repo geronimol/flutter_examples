@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_examples/constants.dart';
 import 'package:flutter_examples/screens/common_form_screen.dart';
+import 'package:url_launcher/link.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -17,6 +18,16 @@ class HomeScreen extends StatelessWidget {
               const Text(
                 'This app will contain some things that I made.',
                 style: TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w500),
+              ),
+              Link(
+                uri: Uri.parse(kProjectsUrl),
+                target: LinkTarget.blank,
+                builder: (_, followLink) => TextButton(
+                  onPressed: followLink,
+                  child: const Text(
+                    'Link to my projects',
+                    style: TextStyle(decoration: TextDecoration.underline),),
+                ),
               ),
               const SizedBox(height: kDefaultPadding,),
               ElevatedButton(
