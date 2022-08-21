@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_examples/constants.dart';
 import 'package:flutter_examples/screens/common_form_screen.dart';
+import 'package:flutter_examples/screens/countdown_to_date_screen.dart';
 import 'package:url_launcher/link.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -33,6 +34,11 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CommonFormScreen())),
                 child: const Text('Common Form'),
+              ),
+              const SizedBox(height: kDefaultPadding,),
+              ElevatedButton(
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CountdownToDateScreen())),
+                child: const Text('Countdown to date'),
               ),
             ],
           ),
