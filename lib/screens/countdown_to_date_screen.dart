@@ -34,7 +34,7 @@ class _CountdownToDateScreenState extends State<CountdownToDateScreen> {
                 key: _formKey,
                 autovalidateMode: _autovalidateMode,
                 child: SizedBox(
-                  width: 200,
+                  width: 220,
                   child: FormBuilderTextField(
                     name: 'date',
                     keyboardType: TextInputType.number,
