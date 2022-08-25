@@ -1,6 +1,7 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_examples/widgets/name_form_field.dart';
+import 'package:flutter_examples/widgets/password_form_field.dart';
 import '../constants.dart';
 
 class CommonFormScreen extends StatelessWidget {
@@ -36,6 +37,7 @@ class _CommonFormState extends State<CommonForm> {
   final controllerFirstName = TextEditingController();
   final controllerLastName = TextEditingController();
   final controllerEmail = TextEditingController();
+  final controllerPassword = TextEditingController();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
 
   @override
@@ -81,7 +83,7 @@ class _CommonFormState extends State<CommonForm> {
                   ),
                   filled: true,
                   hintStyle: TextStyle(color: Colors.grey[500]),
-                  hintText: 'Type in your text',
+                  hintText: 'Type in an email',
                   fillColor: Colors.white70,
                   prefixIcon: const Icon(Icons.email),
                 ),
@@ -99,9 +101,14 @@ class _CommonFormState extends State<CommonForm> {
                 },
               ),
 
+              const SizedBox(height: kDefaultPadding,),
+
+              /// Password
+              PasswordFormField(controllerPassword: controllerPassword),
+
               const SizedBox(height: 15,),
 
-              ElevatedButton(onPressed: onConfirmButtonPressed, child: const Text('CONFIRM')),
+              ElevatedButton(onPressed: _onConfirmButtonPressed, child: const Text('CONFIRM')),
             ],
           ),
         ),
@@ -109,7 +116,7 @@ class _CommonFormState extends State<CommonForm> {
     );
   }
 
-  onConfirmButtonPressed() {
+  _onConfirmButtonPressed() {
     bool isFormValid = _formKey.currentState!.validate();
     if(isFormValid) {
       final message = 'Thank you ${controllerFirstName.text} ${controllerLastName.text}.';
