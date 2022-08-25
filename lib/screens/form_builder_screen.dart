@@ -42,7 +42,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
   Widget build(BuildContext context) {
     return FormBuilder(
       key: _formKey,
-      autovalidateMode: AutovalidateMode.always,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
       child: Column(
         children: [
           /// Name
@@ -128,6 +128,51 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
             ]),
           ),
 
+          const SizedBox(height: kDefaultPadding,),
+
+          /// Dropdown
+          FormBuilderDropdown<String>(
+            name: 'gender',
+            decoration: InputDecoration(
+              labelText: 'Gender',
+              border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              hintText: 'Select Gender',
+            ),
+            validator: FormBuilderValidators.compose(
+                [FormBuilderValidators.required()]),
+            items: ['Male', 'Female']
+                .map((gender) => DropdownMenuItem(
+              alignment: AlignmentDirectional.center,
+              value: gender,
+              child: Text(gender),
+            ))
+                .toList(),
+          ),
+
+          const SizedBox(height: kDefaultPadding,),
+
+          /// Checkbox
+          FormBuilderCheckbox(
+            name: 'checkbox',
+            initialValue: false,
+            title: const Text('My Checkbox'),
+          ),
+
+          const SizedBox(height: kDefaultPadding,),
+
+          /// Chips
+          FormBuilderFilterChip(
+            name: 'chip',
+            decoration: const InputDecoration(
+              border: InputBorder.none,
+            ),
+            options: const [
+              FormBuilderChipOption(value: 'Chip 1', avatar: CircleAvatar(child: Text('C')),),
+              FormBuilderChipOption(value: 'Chip 2', avatar: CircleAvatar(child: Text('C')),),
+              FormBuilderChipOption(value: 'Chip 3', avatar: CircleAvatar(child: Text('C')),),
+            ],
+          ),
+
           const SizedBox(height: 20,),
 
           /// Submit Button
@@ -179,6 +224,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
                     Text('Surname: ${formValues['surname']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
                     Text('Email: ${formValues['email']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
                     Text('Date & Time: ${formValues['date']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
+                    Text('Gender: ${formValues['gender']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
                   ],
                 ),
               ],
