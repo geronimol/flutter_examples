@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_examples/constants.dart';
+import 'package:flutter_examples/screens/carousel_slider_screen.dart';
 import 'package:flutter_examples/screens/common_form_screen.dart';
 import 'package:flutter_examples/screens/countdown_to_date_screen.dart';
 import 'package:flutter_examples/screens/form_builder_screen.dart';
@@ -51,6 +52,11 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const TabBarScreen())),
                 child: const Text('TabBar'),
+              ),
+              const SizedBox(height: kDefaultPadding,),
+              ElevatedButton(
+                onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CarouselSliderScreen())),
+                child: const Text('Carousel Slider'),
               ),
             ],
           ),
