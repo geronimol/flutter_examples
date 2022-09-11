@@ -6,8 +6,9 @@ class TabBarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: SafeArea(
+    return Scaffold(
+      appBar: AppBar(title: const Text('Tab Bar'),),
+      body: const SafeArea(
         child: TabBarExample(),
       ),
     );
