@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter_examples/constants.dart';
 import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'carousel_slider_screen.dart';
 import 'common_form_screen.dart';
@@ -24,17 +26,37 @@ class HomeScreen extends StatelessWidget {
             child: Center(
               child: Column(
                 children: [
-                  const Text(
+                  const SelectableText(
                     'This app will contain some things that I made.',
                     style: TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w500),
                   ),
+                  Text.rich(
+                    textAlign: TextAlign.left,
+                    TextSpan(
+                        style: const TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w500),
+                        children: [
+                          const TextSpan(
+                            text: 'You can check my projects ',
+                          ),
+                          /// Link
+                          TextSpan(
+                            text: 'here',
+                            style: const TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () { launchUrl(Uri.parse(kProjectsUrl));
+                              },
+                          ),
+                        ]
+                    ),
+                  ),
+                  /// Link
                   Link(
-                    uri: Uri.parse(kProjectsUrl),
+                    uri: Uri.parse(kMyWebsiteUrl),
                     target: LinkTarget.blank,
                     builder: (_, followLink) => TextButton(
                       onPressed: followLink,
                       child: const Text(
-                        'Link to my projects',
+                        'Link to my website',
                         style: TextStyle(decoration: TextDecoration.underline),),
                     ),
                   ),

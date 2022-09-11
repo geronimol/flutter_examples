@@ -95,8 +95,6 @@ class _CountdownToDateScreenState extends State<CountdownToDateScreen> {
                 ],
               ),
 
-
-              //
               const SizedBox(height: 20,),
 
               /// Start Button
