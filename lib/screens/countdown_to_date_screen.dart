@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_examples/widgets/countdown_ticker_card.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:intl/intl.dart';
 
 import '../constants.dart';
 import '../utils/masked_date_formatter.dart';
@@ -83,10 +84,19 @@ class _CountdownToDateScreenState extends State<CountdownToDateScreen> {
               const SizedBox(height: 20,),
 
               /// Countdown ticker
-              _selectedDate != null
-                  ? CountdownTickerCard(date: _selectedDate!)
-                  : const SizedBox.shrink(),
+              _selectedDate == null
+                  ? const SizedBox.shrink()
+                  :
+              Column(
+                children: [
+                  Text('Countdown to: ${DateFormat.yMd().add_jm().format(_selectedDate!)}'),
+                  const SizedBox(height: kDefaultPadding,),
+                  CountdownTickerCard(date: _selectedDate!),
+                ],
+              ),
 
+
+              //
               const SizedBox(height: 20,),
 
               /// Start Button
