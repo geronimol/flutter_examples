@@ -73,7 +73,7 @@ class _CountdownToDateScreenState extends State<CountdownToDateScreen> {
                             }
                           }
                         }
-                        return 'Please enter a date.';
+                        return 'Please enter a future date.';
                       }
                     ]),
                   ),

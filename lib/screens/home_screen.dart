@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_examples/constants.dart';
-import 'package:flutter_examples/screens/carousel_slider_screen.dart';
-import 'package:flutter_examples/screens/common_form_screen.dart';
-import 'package:flutter_examples/screens/countdown_to_date_screen.dart';
-import 'package:flutter_examples/screens/datatable_screen.dart';
-import 'package:flutter_examples/screens/form_builder_screen.dart';
-import 'package:flutter_examples/screens/tabbar_screen.dart';
 import 'package:url_launcher/link.dart';
+
+import 'carousel_slider_screen.dart';
+import 'common_form_screen.dart';
+import 'countdown_to_date_screen.dart';
+import 'datatable_screen.dart';
+import 'fetch_json_data_screen.dart';
+import 'form_builder_screen.dart';
+import 'tabbar_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -65,6 +67,11 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DataTableScreen())),
                     child: const Text('Data Table'),
+                  ),
+                  const SizedBox(height: kDefaultPadding,),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FetchJsonDataScreen())),
+                    child: const Text('Fetch Json Data'),
                   ),
                 ],
               ),

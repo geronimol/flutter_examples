@@ -40,6 +40,7 @@ dependencies:
   flutter_form_builder: ^7.2.1
   form_builder_validators: ^8.1.1
   carousel_slider: ^4.1.1
+  http: ^0.13.5
 
 dev_dependencies:
   flutter_test:
