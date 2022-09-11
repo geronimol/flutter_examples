@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 const double kDefaultPadding = 12;
 
 /// Urls
-const String kProjectsUrl = 'https://devgero.com/proyectos';
+const String kMyWebsiteUrl = 'https://devgero.com';
+const String kProjectsUrl = '$kMyWebsiteUrl/proyectos';
 
 /// Colors
 const Color kPrimaryColor = Colors.blue;
