@@ -55,6 +55,12 @@ class _DataTableWidgetState extends State<DataTableWidget> {
     playersList.add(ChampionPlayer(name: 'Andre Agassi', totalGrandSlams: 8));
     playersList.add(ChampionPlayer(name: 'John McEnroe', totalGrandSlams: 7));
     playersList.add(ChampionPlayer(name: 'Mats Wilander', totalGrandSlams: 7));
+    playersList.sort((a, b) {
+      int cmp = b.totalGrandSlams.compareTo(a.totalGrandSlams);
+      if (cmp != 0) return cmp;
+      return a.name.toLowerCase().compareTo(b.name.toLowerCase());
+    },);
+    setState(() {});
   }
 
   @override
@@ -130,9 +136,17 @@ class _DataTableWidgetState extends State<DataTableWidget> {
                     });
                     if (columnIndex == 1) {
                       if (ascending) {
-                        playersFilteredList.sort((a, b) => a.totalGrandSlams.compareTo(b.totalGrandSlams));
+                        playersFilteredList.sort((a, b) {
+                          int cmp = a.totalGrandSlams.compareTo(b.totalGrandSlams);
+                          if (cmp != 0) return cmp;
+                          return a.name.toLowerCase().compareTo(b.name.toLowerCase());
+                        });
                       } else {
-                        playersFilteredList.sort((a, b) => b.totalGrandSlams.compareTo(a.totalGrandSlams));
+                        playersFilteredList.sort((a, b) {
+                          int cmp = b.totalGrandSlams.compareTo(a.totalGrandSlams);
+                          if (cmp != 0) return cmp;
+                          return a.name.toLowerCase().compareTo(b.name.toLowerCase());
+                        });
                       }
                     }
                   },
