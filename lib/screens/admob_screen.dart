@@ -29,20 +29,23 @@ class AdmobWidget extends StatefulWidget {
 
 class _AdmobWidgetState extends State<AdmobWidget> {
   BannerAd? _bannerAd;
+  InterstitialAd? _interstitialAd;
 
   @override
   void initState() {
     loadBanner();
+    loadInterstitialAd();
     super.initState();
   }
 
   @override
   void dispose() {
     _bannerAd?.dispose();
+    _interstitialAd?.dispose();
     super.dispose();
   }
 
-  loadBanner() async {
+  loadBanner() {
     BannerAd(
       adUnitId: AdHelper.bannerAdUnitId,
       size: AdSize.banner,
@@ -61,11 +64,38 @@ class _AdmobWidgetState extends State<AdmobWidget> {
     ).load();
   }
 
+  loadInterstitialAd() {
+    InterstitialAd.load(
+      adUnitId: AdHelper.interstitialAdUnitId,
+      request: const AdRequest(),
+      adLoadCallback: InterstitialAdLoadCallback(
+        onAdLoaded: (ad) {
+          ad.fullScreenContentCallback = FullScreenContentCallback(
+            onAdDismissedFullScreenContent: (ad) {
+              setState(() {
+                _interstitialAd = null;
+              });
+            },
+          );
+
+          setState(() {
+            _interstitialAd = ad;
+          });
+        },
+        onAdFailedToLoad: (err) {
+          print('Failed to load an interstitial ad: ${err.message}');
+        },
+      ),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: kDefaultPadding),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           if (_bannerAd != null)
             Align(
@@ -75,6 +105,14 @@ class _AdmobWidgetState extends State<AdmobWidget> {
                 height: _bannerAd!.size.height.toDouble(),
                 child: AdWidget(ad: _bannerAd!),
               ),
+            ),
+
+          if (_interstitialAd != null)
+            Padding(
+              padding: const EdgeInsets.all(kDefaultPadding),
+              child: ElevatedButton(onPressed: () {
+                _interstitialAd?.show();
+              }, child: const Text('Show interstitial'),),
             ),
         ],
       ),
