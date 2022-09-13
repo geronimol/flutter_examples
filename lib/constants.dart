@@ -6,6 +6,7 @@ const double kDefaultPadding = 12;
 /// Urls
 const String kMyWebsiteUrl = 'https://devgero.com';
 const String kProjectsUrl = '$kMyWebsiteUrl/proyectos';
+const String kAlbumsUrl = 'https://jsonplaceholder.typicode.com/albums';
 
 /// Colors
 const Color kPrimaryColor = Colors.blue;

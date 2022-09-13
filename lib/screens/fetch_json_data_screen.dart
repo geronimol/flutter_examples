@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_examples/constants.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import '../constants.dart';
 import '../models/album.dart';
 
 class FetchJsonDataScreen extends StatelessWidget {
@@ -52,7 +52,7 @@ class _FetchJsonDataWidgetState extends State<FetchJsonDataWidget> {
   }
 
   Future<List<Album>> fetchAlbumsList() async {
-    final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
+    final response = await http.get(Uri.parse(kAlbumsUrl));
 
     if(response.statusCode == 200) {
       return (json.decode(response.body) as List)
