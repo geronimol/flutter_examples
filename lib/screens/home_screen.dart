@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter_examples/constants.dart';
+import 'package:flutter_examples/screens/admob_screen.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -29,6 +30,7 @@ class HomeScreen extends StatelessWidget {
                   const SelectableText(
                     'This app will contain some things that I made.',
                     style: TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w500),
+                    textAlign: TextAlign.center,
                   ),
                   Text.rich(
                     textAlign: TextAlign.left,
@@ -94,6 +96,11 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FetchJsonDataScreen())),
                     child: const Text('Fetch Json Data'),
+                  ),
+                  const SizedBox(height: kDefaultPadding,),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AdmobScreen())),
+                    child: const Text('Admob'),
                   ),
                 ],
               ),

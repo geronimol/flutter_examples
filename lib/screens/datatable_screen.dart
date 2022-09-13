@@ -66,8 +66,8 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    const textStyleDataTableTitle = TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w600);
-    const textStyleDataTableCell = TextStyle(color: Colors.black87, fontSize: 24, fontWeight: FontWeight.w600);
+    const textStyleDataTableTitle = TextStyle(color: Colors.grey, fontSize: 15, fontWeight: FontWeight.w600);
+    const textStyleDataTableCell = TextStyle(color: Colors.black87, fontSize: 20, fontWeight: FontWeight.w600);
     return Column(
       children: [
         const SizedBox(height: kDefaultPadding,),
