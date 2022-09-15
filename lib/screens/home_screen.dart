@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
-import 'package:flutter_examples/constants.dart';
-import 'package:flutter_examples/screens/admob_screen.dart';
 import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../constants.dart';
+import 'admob_screen.dart';
 import 'carousel_slider_screen.dart';
 import 'common_form_screen.dart';
 import 'countdown_to_date_screen.dart';
 import 'datatable_screen.dart';
 import 'fetch_json_data_screen.dart';
 import 'form_builder_screen.dart';
+import 'google_maps_screen.dart';
 import 'tabbar_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -101,6 +102,11 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AdmobScreen())),
                     child: const Text('Admob'),
+                  ),
+                  const SizedBox(height: kDefaultPadding,),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GoogleMapsScreen())),
+                    child: const Text('Google Maps'),
                   ),
                 ],
               ),
