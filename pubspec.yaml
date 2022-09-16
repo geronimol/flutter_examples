@@ -45,6 +45,7 @@ dependencies:
   google_mobile_ads: ^2.0.1
   google_maps_flutter: ^2.2.0
   google_maps_flutter_web: ^0.4.0+2
+  google_fonts: ^3.0.1
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +72,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/google_fonts/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
@@ -83,11 +85,12 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
+  fonts:
+     - family: Noto
+       fonts:
+         - asset: assets/google_fonts/NotoEmoji-Medium.ttf
+         - asset: assets/google_fonts/NotoEmoji-Light.ttf
+         - asset: assets/google_fonts/NotoEmoji-Regular.ttf
   #         style: italic
   #   - family: Trajan Pro
   #     fonts:

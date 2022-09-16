@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../constants.dart';
 import 'admob_screen.dart';
+import 'animations_screen.dart';
 import 'carousel_slider_screen.dart';
 import 'common_form_screen.dart';
 import 'countdown_to_date_screen.dart';
@@ -65,6 +66,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: kDefaultPadding,),
                   ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AnimationsScreen())),
+                    child: const Text('Animations'),
+                  ),
+                  const SizedBox(height: kDefaultPadding,),
+                  ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CommonFormScreen())),
                     child: const Text('Common Form'),
                   ),
@@ -72,21 +78,6 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FormBuilderScreen())),
                     child: const Text('Form Builder'),
-                  ),
-                  const SizedBox(height: kDefaultPadding,),
-                  ElevatedButton(
-                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CountdownToDateScreen())),
-                    child: const Text('Countdown to date'),
-                  ),
-                  const SizedBox(height: kDefaultPadding,),
-                  ElevatedButton(
-                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const TabBarScreen())),
-                    child: const Text('TabBar'),
-                  ),
-                  const SizedBox(height: kDefaultPadding,),
-                  ElevatedButton(
-                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CarouselSliderScreen())),
-                    child: const Text('Carousel Slider'),
                   ),
                   const SizedBox(height: kDefaultPadding,),
                   ElevatedButton(
@@ -100,6 +91,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   const SizedBox(height: kDefaultPadding,),
                   ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CountdownToDateScreen())),
+                    child: const Text('Countdown to date'),
+                  ),
+                  const SizedBox(height: kDefaultPadding,),
+                  ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AdmobScreen())),
                     child: const Text('Admob'),
                   ),
@@ -107,6 +103,16 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GoogleMapsScreen())),
                     child: const Text('Google Maps'),
+                  ),
+                  const SizedBox(height: kDefaultPadding,),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const TabBarScreen())),
+                    child: const Text('TabBar'),
+                  ),
+                  const SizedBox(height: kDefaultPadding,),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CarouselSliderScreen())),
+                    child: const Text('Carousel Slider'),
                   ),
                 ],
               ),
