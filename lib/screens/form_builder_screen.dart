@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_examples/constants.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:form_builder_validators/form_builder_validators.dart';
+import 'package:intl/intl.dart';
 
 class FormBuilderScreen extends StatelessWidget {
   const FormBuilderScreen({Key? key}) : super(key: key);
@@ -223,7 +224,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
                     Text('Name: ${formValues['name']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
                     Text('Surname: ${formValues['surname']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
                     Text('Email: ${formValues['email']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
-                    Text('Date & Time: ${formValues['date']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
+                    Text('Date & Time: ${DateFormat.yMd().add_jm().format(formValues['date'])}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
                     Text('Gender: ${formValues['gender']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
                   ],
                 ),
