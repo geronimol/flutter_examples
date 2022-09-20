@@ -24,6 +24,6 @@ You can see some of my projects <a href="https://devgero.com/proyectos" target="
 |----------|-------------|
 | <img src="https://res.cloudinary.com/davmivgjv/image/upload/v1663703394/flutter_examples/countdown_timer_ynagsu.gif"> |  <img src="https://res.cloudinary.com/davmivgjv/image/upload/v1663703551/flutter_examples/admob_z8ysru.gif"> | 
 
-| Google Maps   |
-|----------|-------------|
+| Google Maps | 
+|----------|
 | <img src="https://res.cloudinary.com/davmivgjv/image/upload/v1663704024/flutter_examples/maps_nbsox6.gif"> | 
