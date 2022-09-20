@@ -13,6 +13,7 @@ import 'datatable_screen.dart';
 import 'fetch_json_data_screen.dart';
 import 'form_builder_screen.dart';
 import 'google_maps_screen.dart';
+import 'slivers_screen.dart';
 import 'tabbar_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -113,6 +114,11 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CarouselSliderScreen())),
                     child: const Text('Carousel Slider'),
+                  ),
+                  const SizedBox(height: kDefaultPadding,),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SliversScreen())),
+                    child: const Text('Slivers'),
                   ),
                 ],
               ),
