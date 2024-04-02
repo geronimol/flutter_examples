@@ -3,7 +3,7 @@ import '../constants.dart';
 import '../widgets/explicit_animation_widget.dart';
 
 class HeroAnimationScreen extends StatelessWidget {
-  const HeroAnimationScreen({Key? key}) : super(key: key);
+  const HeroAnimationScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

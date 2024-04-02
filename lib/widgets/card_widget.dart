@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 class CardWidget extends StatelessWidget {
   const CardWidget({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,8 @@ class CardWidget extends StatelessWidget {
         child: Column(
           children: [
             Expanded(child: Image.asset('assets/images/test_img.jpeg', fit: BoxFit.cover,)),
-            Column(
-              children: const [
+            const Column(
+              children: [
                 SizedBox(height: 8,),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 8),

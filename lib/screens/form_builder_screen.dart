@@ -5,7 +5,7 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:intl/intl.dart';
 
 class FormBuilderScreen extends StatelessWidget {
-  const FormBuilderScreen({Key? key}) : super(key: key);
+  const FormBuilderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class FormBuilderScreen extends StatelessWidget {
 
 
 class FormBuilderExample extends StatefulWidget {
-  const FormBuilderExample({Key? key}) : super(key: key);
+  const FormBuilderExample({super.key});
 
   @override
   State<FormBuilderExample> createState() => _FormBuilderExampleState();

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class SliversScreen extends StatelessWidget {
-  const SliversScreen({Key? key}) : super(key: key);
+  const SliversScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

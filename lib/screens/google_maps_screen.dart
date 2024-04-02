@@ -4,21 +4,21 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../constants.dart';
 
 class GoogleMapsScreen extends StatelessWidget {
-  const GoogleMapsScreen({Key? key}) : super(key: key);
+  const GoogleMapsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Google Maps'),),
-      body: Stack(
+      body: const Stack(
         // alignment: Alignment.topCenter,
         children: [
-          const MapSample(),
+          MapSample(),
           Padding(
-            padding: const EdgeInsets.all(kDefaultPadding),
+            padding: EdgeInsets.all(kDefaultPadding),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Flexible(child: Text('You will need to specify your API key to show the map properly')),
               ],
             ),

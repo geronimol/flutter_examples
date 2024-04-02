@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PasswordFormField extends StatefulWidget {
-  const PasswordFormField({Key? key, required this.controllerPassword}) : super(key: key);
+  const PasswordFormField({super.key, required this.controllerPassword});
 
   final TextEditingController controllerPassword;
 

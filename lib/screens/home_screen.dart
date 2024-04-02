@@ -17,7 +17,7 @@ import 'slivers_screen.dart';
 import 'tabbar_screen.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: kDefaultPadding,),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FetchJsonDataScreen())),
-                    child: const Text('Fetch Json Data'),
+                    child: const Text('Fetch JSON Data'),
                   ),
                   const SizedBox(height: kDefaultPadding,),
                   ElevatedButton(

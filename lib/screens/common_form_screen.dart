@@ -5,7 +5,7 @@ import 'package:flutter_examples/widgets/password_form_field.dart';
 import '../constants.dart';
 
 class CommonFormScreen extends StatelessWidget {
-  const CommonFormScreen({Key? key}) : super(key: key);
+  const CommonFormScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class CommonFormScreen extends StatelessWidget {
 }
 
 class CommonForm extends StatefulWidget {
-  const CommonForm({Key? key}) : super(key: key);
+  const CommonForm({super.key});
 
   @override
   State<CommonForm> createState() => _CommonFormState();

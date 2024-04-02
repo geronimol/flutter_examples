@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -5,7 +7,7 @@ import '../constants.dart';
 import '../utils/ad_helper.dart';
 
 class AdmobScreen extends StatelessWidget {
-  const AdmobScreen({Key? key}) : super(key: key);
+  const AdmobScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class AdmobScreen extends StatelessWidget {
 }
 
 class AdmobWidget extends StatefulWidget {
-  const AdmobWidget({Key? key}) : super(key: key);
+  const AdmobWidget({super.key});
 
   @override
   State<AdmobWidget> createState() => _AdmobWidgetState();
@@ -57,7 +59,7 @@ class _AdmobWidgetState extends State<AdmobWidget> {
           });
         },
         onAdFailedToLoad: (ad, err) {
-          print('Failed to load a banner ad: ${err.message}');
+          log('Failed to load a banner ad: ${err.message}');
           ad.dispose();
         },
       ),
@@ -83,7 +85,7 @@ class _AdmobWidgetState extends State<AdmobWidget> {
           });
         },
         onAdFailedToLoad: (err) {
-          print('Failed to load an interstitial ad: ${err.message}');
+          log('Failed to load an interstitial ad: ${err.message}');
         },
       ),
     );

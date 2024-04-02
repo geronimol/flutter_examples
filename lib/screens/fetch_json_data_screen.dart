@@ -5,7 +5,7 @@ import '../constants.dart';
 import '../models/album.dart';
 
 class FetchJsonDataScreen extends StatelessWidget {
-  const FetchJsonDataScreen({Key? key}) : super(key: key);
+  const FetchJsonDataScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class FetchJsonDataScreen extends StatelessWidget {
 }
 
 class FetchJsonDataWidget extends StatefulWidget {
-  const FetchJsonDataWidget({Key? key}) : super(key: key);
+  const FetchJsonDataWidget({super.key});
 
   @override
   State<FetchJsonDataWidget> createState() => _FetchJsonDataWidgetState();

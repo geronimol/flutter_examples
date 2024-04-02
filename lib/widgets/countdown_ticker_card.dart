@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 
 class CountdownTickerCard extends StatefulWidget {
-  const CountdownTickerCard({Key? key, required this.date}) : super(key: key);
+  const CountdownTickerCard({super.key, required this.date});
 
   final DateTime date;
 

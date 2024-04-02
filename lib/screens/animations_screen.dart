@@ -6,7 +6,7 @@ import '../widgets/explicit_animation_widget.dart';
 import 'hero_animation_screen.dart';
 
 class AnimationsScreen extends StatelessWidget {
-  const AnimationsScreen({Key? key}) : super(key: key);
+  const AnimationsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,7 @@ class AnimationsScreen extends StatelessWidget {
 }
 
 class AnimationsWidget extends StatelessWidget {
-  const AnimationsWidget({Key? key}) : super(key: key);
+  const AnimationsWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +65,7 @@ class AnimationsWidget extends StatelessWidget {
 }
 
 class AnimatedPositionedWidget extends StatefulWidget {
-  const AnimatedPositionedWidget({Key? key}) : super(key: key);
+  const AnimatedPositionedWidget({super.key});
 
   @override
   State<AnimatedPositionedWidget> createState() => _AnimatedPositionedWidgetState();
@@ -128,7 +128,7 @@ class _AnimatedPositionedWidgetState extends State<AnimatedPositionedWidget> {
 }
 
 class TweenAnimationWidget extends StatefulWidget {
-  const TweenAnimationWidget({Key? key}) : super(key: key);
+  const TweenAnimationWidget({super.key});
 
   @override
   State<TweenAnimationWidget> createState() => _TweenAnimationWidgetState();
@@ -193,7 +193,7 @@ class _TweenAnimationWidgetState extends State<TweenAnimationWidget> {
 }
 
 class AnimatedSwitcherWidget extends StatefulWidget {
-  const AnimatedSwitcherWidget({Key? key}) : super(key: key);
+  const AnimatedSwitcherWidget({super.key});
 
   @override
   State<AnimatedSwitcherWidget> createState() => _AnimatedSwitcherWidgetState();
@@ -269,7 +269,7 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
 }
 
 class ContainerAnimationWidget extends StatefulWidget {
-  const ContainerAnimationWidget({Key? key}) : super(key: key);
+  const ContainerAnimationWidget({super.key});
 
   @override
   State<ContainerAnimationWidget> createState() => _ContainerAnimationWidgetState();
@@ -322,7 +322,7 @@ class _ContainerAnimationWidgetState extends State<ContainerAnimationWidget> {
 }
 
 class DefaultTextStyleAnimationWidget extends StatefulWidget {
-  const DefaultTextStyleAnimationWidget({Key? key}) : super(key: key);
+  const DefaultTextStyleAnimationWidget({super.key});
 
   @override
   State<DefaultTextStyleAnimationWidget> createState() => _DefaultTextStyleAnimationWidgetState();

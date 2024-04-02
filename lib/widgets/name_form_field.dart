@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class NameFormField extends StatelessWidget {
-  const NameFormField({Key? key, required this.controller, required this.label, required this.errorMessage, required this.autofillHints}) : super(key: key);
+  const NameFormField({super.key, required this.controller, required this.label, required this.errorMessage, required this.autofillHints});
 
   final TextEditingController controller;
   final List<String> autofillHints;

@@ -8,7 +8,7 @@ import '../constants.dart';
 import '../utils/masked_date_formatter.dart';
 
 class CountdownToDateScreen extends StatefulWidget {
-  const CountdownToDateScreen({Key? key}) : super(key: key);
+  const CountdownToDateScreen({super.key});
 
   @override
   State<CountdownToDateScreen> createState() => _CountdownToDateScreenState();

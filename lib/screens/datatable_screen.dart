@@ -4,7 +4,7 @@ import '../models/champion_player.dart';
 
 
 class DataTableScreen extends StatelessWidget {
-  const DataTableScreen({Key? key}) : super(key: key);
+  const DataTableScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class DataTableScreen extends StatelessWidget {
 }
 
 class DataTableWidget extends StatefulWidget {
-  const DataTableWidget({Key? key}) : super(key: key);
+  const DataTableWidget({super.key});
 
   @override
   State<DataTableWidget> createState() => _DataTableWidgetState();
@@ -106,7 +106,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
               sortColumnIndex: sortColumnIndex,
               sortAscending: sortAscending,
               columnSpacing: size.width > 350 ? null : 20,
-              dataRowHeight: size.width > 350 ? null : 80,
+              dataRowMaxHeight: size.width > 350 ? null : 80,
               columns: <DataColumn>[
                 DataColumn(
                   onSort: (columnIndex, ascending) {

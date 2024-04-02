@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class ExplicitAnimationWidget extends StatefulWidget {
-  const ExplicitAnimationWidget({Key? key,}) : super(key: key);
+  const ExplicitAnimationWidget({super.key,});
 
   @override
   State<ExplicitAnimationWidget> createState() => _ExplicitAnimationWidgetState();

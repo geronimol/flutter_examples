@@ -3,7 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import '../constants.dart';
 
 class CarouselSliderScreen extends StatelessWidget {
-  const CarouselSliderScreen({Key? key}) : super(key: key);
+  const CarouselSliderScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class CarouselSliderScreen extends StatelessWidget {
 
 
 class CustomCarousel extends StatefulWidget {
-  const CustomCarousel({Key? key}) : super(key: key);
+  const CustomCarousel({super.key});
 
   @override
   State<CustomCarousel> createState() => _CustomCarouselState();

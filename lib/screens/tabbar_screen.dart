@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import '../widgets/card_widget.dart';
 
 class TabBarScreen extends StatelessWidget {
-  const TabBarScreen({Key? key}) : super(key: key);
+  const TabBarScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class TabBarScreen extends StatelessWidget {
 
 class TabBarExample extends StatefulWidget {
 
-  const TabBarExample({Key? key}) : super(key: key);
+  const TabBarExample({super.key});
 
   @override
   State<TabBarExample> createState() => _TabBarExampleState();
@@ -107,8 +107,8 @@ class _TabBarExampleState extends State<TabBarExample> with SingleTickerProvider
 
 class TabThree extends StatelessWidget {
   const TabThree({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -132,8 +132,8 @@ class TabThree extends StatelessWidget {
 
 class TabTwo extends StatelessWidget {
   const TabTwo({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -152,8 +152,8 @@ class TabTwo extends StatelessWidget {
 
 class TabOne extends StatelessWidget {
   const TabOne({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
