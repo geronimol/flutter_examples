@@ -34,9 +34,7 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
           onPressed: () => setState(() => obscureText = !obscureText),
           icon: AnimatedSwitcher(
             duration: const Duration(milliseconds: 500),
-            child: obscureText
-                ? Icon(Icons.remove_red_eye_outlined, key: UniqueKey(),)
-                : Icon(Icons.remove_red_eye, key: UniqueKey(),),
+            child: obscureText ? Icon(Icons.remove_red_eye_outlined, key: UniqueKey()) : Icon(Icons.remove_red_eye, key: UniqueKey()),
           ),
         ),
       ),
@@ -47,9 +45,9 @@ class _PasswordFormFieldState extends State<PasswordFormField> {
       autovalidateMode: AutovalidateMode.disabled,
       autofillHints: const [AutofillHints.password],
       validator: (s) {
-        if(s == null || s.isEmpty) {
+        if (s == null || s.isEmpty) {
           return 'Please type a password.';
-        } else if(s.length < 6) {
+        } else if (s.length < 6) {
           return 'Password must be at least 6 characters.';
         }
         return null;

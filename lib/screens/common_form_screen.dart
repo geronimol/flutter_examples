@@ -10,7 +10,7 @@ class CommonFormScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Common Form Screen'),),
+      appBar: AppBar(title: const Text('Common Form Screen')),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
@@ -58,7 +58,7 @@ class _CommonFormState extends State<CommonForm> {
                 autofillHints: const [AutofillHints.givenName],
               ),
 
-              const SizedBox(height: kDefaultPadding,),
+              const SizedBox(height: kDefaultPadding),
 
               /// Last Name
               NameFormField(
@@ -68,7 +68,7 @@ class _CommonFormState extends State<CommonForm> {
                 autofillHints: const [AutofillHints.familyName],
               ),
 
-              const SizedBox(height: kDefaultPadding,),
+              const SizedBox(height: kDefaultPadding),
 
               /// Email
               TextFormField(
@@ -76,11 +76,9 @@ class _CommonFormState extends State<CommonForm> {
                   label: const Text('Email'),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15.0),
-                    borderSide:  const BorderSide(color: Colors.grey ),
+                    borderSide: const BorderSide(color: Colors.grey),
                   ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
+                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
                   filled: true,
                   hintStyle: TextStyle(color: Colors.grey[500]),
                   hintText: 'Type in an email',
@@ -94,19 +92,19 @@ class _CommonFormState extends State<CommonForm> {
                 autovalidateMode: AutovalidateMode.disabled,
                 autofillHints: const [AutofillHints.email],
                 validator: (s) {
-                  if(s == null || s.trim().isEmpty || !EmailValidator.validate(s)) {
+                  if (s == null || s.trim().isEmpty || !EmailValidator.validate(s)) {
                     return 'Please enter a valid email.';
                   }
                   return null;
                 },
               ),
 
-              const SizedBox(height: kDefaultPadding,),
+              const SizedBox(height: kDefaultPadding),
 
               /// Password
               PasswordFormField(controllerPassword: controllerPassword),
 
-              const SizedBox(height: 15,),
+              const SizedBox(height: 15),
 
               ElevatedButton(onPressed: _onConfirmButtonPressed, child: const Text('CONFIRM')),
             ],
@@ -118,10 +116,9 @@ class _CommonFormState extends State<CommonForm> {
 
   _onConfirmButtonPressed() {
     bool isFormValid = _formKey.currentState!.validate();
-    if(isFormValid) {
+    if (isFormValid) {
       final message = 'Thank you ${controllerFirstName.text} ${controllerLastName.text}.';
-      ScaffoldMessenger.of(context)
-          .showSnackBar(SnackBar(content: Text(message), duration: const Duration(seconds: 5),));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message), duration: const Duration(seconds: 5)));
     } else {
       setState(() {
         autovalidateMode = AutovalidateMode.always;
@@ -129,4 +126,3 @@ class _CommonFormState extends State<CommonForm> {
     }
   }
 }
-

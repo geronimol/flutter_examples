@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class ExplicitAnimationWidget extends StatefulWidget {
-  const ExplicitAnimationWidget({super.key,});
+  const ExplicitAnimationWidget({
+    super.key,
+  });
 
   @override
   State<ExplicitAnimationWidget> createState() => _ExplicitAnimationWidgetState();
@@ -39,12 +41,12 @@ class _ExplicitAnimationWidgetState extends State<ExplicitAnimationWidget> with 
           children: [
             RotationTransition(
               turns: _controller,
-              child: Text('🤣', style: TextStyle(fontFamily: 'Noto', fontSize: 50, color: color),),
+              child: Text('🤣', style: TextStyle(fontFamily: 'Noto', fontSize: 50, color: color)),
             ),
-            const SizedBox(height: kDefaultPadding,),
+            const SizedBox(height: kDefaultPadding),
             Transform.scale(
               scale: (2 * value).clamp(1, 2),
-              child: Text('NICE!', style: TextStyle(color: color),),
+              child: Text('NICE!', style: TextStyle(color: color)),
             ),
           ],
         );

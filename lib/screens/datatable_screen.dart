@@ -2,14 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_examples/constants.dart';
 import '../models/champion_player.dart';
 
-
 class DataTableScreen extends StatelessWidget {
   const DataTableScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Data Table'),),
+      appBar: AppBar(title: const Text('Data Table')),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
@@ -35,7 +34,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
   bool sortAscending = false;
   int sortColumnIndex = 1;
   final scrollController = ScrollController();
-  List<ChampionPlayer> playersList = [], playersFilteredList =[];
+  List<ChampionPlayer> playersList = [], playersFilteredList = [];
 
   @override
   void initState() {
@@ -43,7 +42,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
     playersFilteredList = playersList;
     super.initState();
   }
-  
+
   loadChampionPlayersList() {
     playersList.add(ChampionPlayer(name: 'Roger Federer', totalGrandSlams: 20));
     playersList.add(ChampionPlayer(name: 'Rafael Nadal', totalGrandSlams: 20));
@@ -59,7 +58,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
       int cmp = b.totalGrandSlams.compareTo(a.totalGrandSlams);
       if (cmp != 0) return cmp;
       return a.name.toLowerCase().compareTo(b.name.toLowerCase());
-    },);
+    });
     setState(() {});
   }
 
@@ -70,21 +69,17 @@ class _DataTableWidgetState extends State<DataTableWidget> {
     const textStyleDataTableCell = TextStyle(color: Colors.black87, fontSize: 20, fontWeight: FontWeight.w600);
     return Column(
       children: [
-        const SizedBox(height: kDefaultPadding,),
+        const SizedBox(height: kDefaultPadding),
 
         /// Description Text
-        const Text('Updated as of 2021 US Open.', style: TextStyle(fontStyle: FontStyle.italic),),
+        const Text('Updated as of 2021 US Open.', style: TextStyle(fontStyle: FontStyle.italic)),
 
         /// Search bar
         Padding(
           padding: const EdgeInsets.all(kDefaultPadding),
           child: TextField(
             style: const TextStyle(fontWeight: FontWeight.w600),
-            decoration: const InputDecoration(
-                border: OutlineInputBorder(),
-                labelText: 'Search',
-                prefixIcon: Icon(Icons.search)
-            ),
+            decoration: const InputDecoration(border: OutlineInputBorder(), labelText: 'Search', prefixIcon: Icon(Icons.search)),
             onChanged: (s) {
               setState(() {
                 playersFilteredList = playersList.where((player) => player.name.toLowerCase().contains(s.toLowerCase())).toList();
@@ -122,10 +117,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
                       }
                     }
                   },
-                  label: const Text(
-                    'Champion',
-                    style: textStyleDataTableTitle,
-                  ),
+                  label: const Text('Champion', style: textStyleDataTableTitle),
                 ),
                 DataColumn(
                   numeric: true,
@@ -150,10 +142,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
                       }
                     }
                   },
-                  label: const Text(
-                    'Grand Slams',
-                    style: textStyleDataTableTitle,
-                  ),
+                  label: const Text('Grand Slams', style: textStyleDataTableTitle),
                 ),
               ],
               rows: playersFilteredList.map((user) {
@@ -161,11 +150,11 @@ class _DataTableWidgetState extends State<DataTableWidget> {
                   DataCell(
                     SizedBox(
                       width: size.width > 350 ? null : size.width * 0.6,
-                      child: Text(user.name, style: textStyleDataTableCell,),
+                      child: Text(user.name, style: textStyleDataTableCell),
                     ),
                   ),
                   DataCell(
-                    Text('${user.totalGrandSlams}', style: textStyleDataTableCell,),
+                    Text('${user.totalGrandSlams}', style: textStyleDataTableCell),
                   ),
                 ]);
               }).toList(),
@@ -176,4 +165,3 @@ class _DataTableWidgetState extends State<DataTableWidget> {
     );
   }
 }
-

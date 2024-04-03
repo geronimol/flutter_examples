@@ -11,9 +11,7 @@ class AnimationsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Animations'),
-      ),
+      appBar: AppBar(title: const Text('Animations')),
       body: const SafeArea(
         child: AnimationsWidget(),
       ),
@@ -34,15 +32,15 @@ class AnimationsWidget extends StatelessWidget {
             children: [
               const TweenAnimationWidget(),
               const SizedBox(height: kDefaultPadding * 2),
-              const Text('Explicit Animation', style: TextStyle(decoration: TextDecoration.underline),),
-              const SizedBox(height: kDefaultPadding,),
+              const Text('Explicit Animation', style: TextStyle(decoration: TextDecoration.underline)),
+              const SizedBox(height: kDefaultPadding),
               const Hero(
                 tag: 'hero',
                 child: Material(child: ExplicitAnimationWidget()),
               ),
               const SizedBox(height: kDefaultPadding * 2),
-              const Text('Hero Animation', style: TextStyle(decoration: TextDecoration.underline),),
-              const SizedBox(height: kDefaultPadding,),
+              const Text('Hero Animation', style: TextStyle(decoration: TextDecoration.underline)),
+              const SizedBox(height: kDefaultPadding),
               ElevatedButton(
                 onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const HeroAnimationScreen())),
                 child: const Text('Go Hero!'),
@@ -82,9 +80,7 @@ class _AnimatedPositionedWidgetState extends State<AnimatedPositionedWidget> {
           'Positioned Animation',
           style: TextStyle(decoration: TextDecoration.underline),
         ),
-        const SizedBox(
-          height: kDefaultPadding,
-        ),
+        const SizedBox(height: kDefaultPadding),
         SizedBox(
           height: 150,
           child: Stack(
@@ -115,9 +111,7 @@ class _AnimatedPositionedWidgetState extends State<AnimatedPositionedWidget> {
             ],
           ),
         ),
-        const SizedBox(
-          height: kDefaultPadding,
-        ),
+        const SizedBox(height: kDefaultPadding),
         ElevatedButton(
           onPressed: () => setState(() => selected = !selected),
           child: const Text('Animate!'),
@@ -146,9 +140,7 @@ class _TweenAnimationWidgetState extends State<TweenAnimationWidget> {
           'Tween Animation Builder',
           style: TextStyle(decoration: TextDecoration.underline),
         ),
-        const SizedBox(
-          height: kDefaultPadding,
-        ),
+        const SizedBox(height: kDefaultPadding),
         TweenAnimationBuilder<double>(
             duration: const Duration(seconds: 2),
             curve: Curves.bounceOut,
@@ -157,7 +149,9 @@ class _TweenAnimationWidgetState extends State<TweenAnimationWidget> {
             child: AnimatedSwitcher(
               duration: const Duration(milliseconds: 800),
               child: !showEmoji
-                  ? const SizedBox(height: 30,)
+                  ? const SizedBox(
+                      height: 30,
+                    )
                   : Text(
                       '🥰',
                       style: textStyle.copyWith(fontFamily: 'Noto', fontSize: 30),
@@ -217,9 +211,7 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
           }),
           child: Text('${isFadeTransition ? 'Fade' : 'Scale'} transition'),
         ),
-        const SizedBox(
-          height: kDefaultPadding,
-        ),
+        const SizedBox(height: kDefaultPadding),
         AnimatedSwitcher(
           duration: const Duration(milliseconds: 500),
           transitionBuilder: (widget, animation) {
@@ -289,18 +281,14 @@ class _ContainerAnimationWidgetState extends State<ContainerAnimationWidget> {
           'Container Animation',
           style: TextStyle(decoration: TextDecoration.underline),
         ),
-        const SizedBox(
-          height: kDefaultPadding,
-        ),
+        const SizedBox(height: kDefaultPadding),
         AnimatedContainer(
           duration: const Duration(milliseconds: 400),
           height: height,
           width: width,
           color: color,
         ),
-        const SizedBox(
-          height: kDefaultPadding,
-        ),
+        const SizedBox(height: kDefaultPadding),
         ElevatedButton(
           onPressed: () {
             setState(() {
@@ -341,9 +329,7 @@ class _DefaultTextStyleAnimationWidgetState extends State<DefaultTextStyleAnimat
           'Default TextStyle Animation',
           style: TextStyle(decoration: TextDecoration.underline),
         ),
-        const SizedBox(
-          height: kDefaultPadding,
-        ),
+        const SizedBox(height: kDefaultPadding),
         AnimatedDefaultTextStyle(
           duration: const Duration(milliseconds: 400),
           style: TextStyle(
@@ -358,9 +344,7 @@ class _DefaultTextStyleAnimationWidgetState extends State<DefaultTextStyleAnimat
             style: GoogleFonts.lato(),
           ),
         ),
-        const SizedBox(
-          height: kDefaultPadding,
-        ),
+        const SizedBox(height: kDefaultPadding),
         ElevatedButton(
           onPressed: () {
             setState(() {

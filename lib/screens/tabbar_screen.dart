@@ -7,7 +7,7 @@ class TabBarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Tab Bar'),),
+      appBar: AppBar(title: const Text('Tab Bar')),
       body: const SafeArea(
         child: TabBarExample(),
       ),
@@ -16,14 +16,13 @@ class TabBarScreen extends StatelessWidget {
 }
 
 class TabBarExample extends StatefulWidget {
-
   const TabBarExample({super.key});
 
   @override
   State<TabBarExample> createState() => _TabBarExampleState();
 }
 
-class _TabBarExampleState extends State<TabBarExample> with SingleTickerProviderStateMixin  {
+class _TabBarExampleState extends State<TabBarExample> with SingleTickerProviderStateMixin {
   late TabController _tabController;
 
   @override
@@ -42,7 +41,7 @@ class _TabBarExampleState extends State<TabBarExample> with SingleTickerProvider
   Widget build(BuildContext context) {
     return Column(
       children: [
-        // give the tab bar a height [can change height to preferred height]
+        /// give the tab bar a height [can change height to preferred height]
         SizedBox(
           height: 45,
           child: Row(
@@ -51,7 +50,10 @@ class _TabBarExampleState extends State<TabBarExample> with SingleTickerProvider
                 onTap: () {},
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15),
-                  child: Icon(Icons.add, color: Colors.blue,),
+                  child: Icon(
+                    Icons.add,
+                    color: Colors.blue,
+                  ),
                 ),
               ),
               Expanded(
@@ -62,17 +64,10 @@ class _TabBarExampleState extends State<TabBarExample> with SingleTickerProvider
                   labelStyle: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
                   unselectedLabelColor: Colors.grey,
                   tabs: const [
-                    // first tab [you can add an icon using the icon property]
-                    Tab(
-                      text: 'Tab 1',
-                    ),
-                    // second tab [you can add an icon using the icon property]
-                    Tab(
-                      text: 'Tab 2',
-                    ),
-                    Tab(
-                      text: 'Tab 3',
-                    ),
+                    /// first tab [you can add an icon using the icon property]
+                    Tab(text: 'Tab 1'),
+                    Tab(text: 'Tab 2'),
+                    Tab(text: 'Tab 3'),
                   ],
                 ),
               ),
@@ -80,7 +75,7 @@ class _TabBarExampleState extends State<TabBarExample> with SingleTickerProvider
                 onTap: () {},
                 child: const Padding(
                   padding: EdgeInsets.symmetric(horizontal: 15),
-                  child: Icon(Icons.search, color: Colors.blue,),
+                  child: Icon(Icons.search, color: Colors.blue),
                 ),
               ),
             ],
@@ -115,7 +110,7 @@ class TabThree extends StatelessWidget {
     return GridView.count(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
       crossAxisCount: 2,
-      childAspectRatio: (3/4),
+      childAspectRatio: (3 / 4),
       children: const [
         CardWidget(),
         CardWidget(),
@@ -140,7 +135,7 @@ class TabTwo extends StatelessWidget {
     return GridView.count(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
       crossAxisCount: 2,
-      childAspectRatio: (3/4),
+      childAspectRatio: (3 / 4),
       children: const [
         CardWidget(),
         CardWidget(),
@@ -160,7 +155,7 @@ class TabOne extends StatelessWidget {
     return GridView.count(
       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 20),
       crossAxisCount: 2,
-      childAspectRatio: (3/4),
+      childAspectRatio: (3 / 4),
       children: const [
         CardWidget(),
       ],

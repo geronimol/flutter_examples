@@ -14,7 +14,7 @@ class FetchJsonDataScreen extends StatelessWidget {
         title: Column(
           children: [
             const Text('Fetch Json Data'),
-            const SizedBox(height: 5,),
+            const SizedBox(height: 5),
             RichText(
               text: const TextSpan(
                 style: TextStyle(color: Colors.white),
@@ -26,7 +26,6 @@ class FetchJsonDataScreen extends StatelessWidget {
             ),
           ],
         ),
-
       ),
       body: const SafeArea(
         child: FetchJsonDataWidget(),
@@ -54,10 +53,8 @@ class _FetchJsonDataWidgetState extends State<FetchJsonDataWidget> {
   Future<List<Album>> fetchAlbumsList() async {
     final response = await http.get(Uri.parse(kAlbumsUrl));
 
-    if(response.statusCode == 200) {
-      return (json.decode(response.body) as List)
-          .map((album) => Album.fromJson(album))
-          .toList();
+    if (response.statusCode == 200) {
+      return (json.decode(response.body) as List).map((album) => Album.fromJson(album)).toList();
     } else {
       throw Exception('Failed to load album');
     }
@@ -89,4 +86,3 @@ class _FetchJsonDataWidgetState extends State<FetchJsonDataWidget> {
     );
   }
 }
-

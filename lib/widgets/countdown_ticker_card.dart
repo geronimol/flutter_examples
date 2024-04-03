@@ -26,7 +26,7 @@ class _CountdownTickerCardState extends State<CountdownTickerCard> {
       setState(() {
         now = DateTime.now();
         clockTimer = widget.date.difference(now);
-        if(!clockTimer.isNegative) {
+        if (!clockTimer.isNegative) {
           days = clockTimer.inDays;
           hours = clockTimer.inHours.remainder(24);
           minutes = clockTimer.inMinutes.remainder(60);
@@ -57,13 +57,13 @@ class _CountdownTickerCardState extends State<CountdownTickerCard> {
             mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              _buildIndicator(displayText: days.toString().padLeft(2,'0'), displayIndicator: 'DAY'),
-              const SizedBox(width: 5,),
-              _buildIndicator(displayText: hours.toString().padLeft(2,'0'), displayIndicator: 'HR'),
-              const SizedBox(width: 5,),
-              _buildIndicator(displayText: minutes.toString().padLeft(2,'0'), displayIndicator: 'MIN'),
-              const SizedBox(width: 5,),
-              _buildIndicator(displayText: seconds.toString().padLeft(2,'0'), displayIndicator: 'SEC'),
+              _buildIndicator(displayText: days.toString().padLeft(2, '0'), displayIndicator: 'DAY'),
+              const SizedBox(width: 5),
+              _buildIndicator(displayText: hours.toString().padLeft(2, '0'), displayIndicator: 'HR'),
+              const SizedBox(width: 5),
+              _buildIndicator(displayText: minutes.toString().padLeft(2, '0'), displayIndicator: 'MIN'),
+              const SizedBox(width: 5),
+              _buildIndicator(displayText: seconds.toString().padLeft(2, '0'), displayIndicator: 'SEC'),
             ],
           ),
         ),
@@ -74,8 +74,8 @@ class _CountdownTickerCardState extends State<CountdownTickerCard> {
   Widget _buildIndicator({required String displayText, required String displayIndicator}) {
     return Column(
       children: [
-        Text(displayText, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-        Text(displayIndicator, style: const TextStyle(fontSize: 9, fontWeight: FontWeight.bold),),
+        Text(displayText, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+        Text(displayIndicator, style: const TextStyle(fontSize: 9, fontWeight: FontWeight.bold)),
       ],
     );
   }

@@ -10,7 +10,7 @@ class FormBuilderScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Form Builder'),),
+      appBar: AppBar(title: const Text('Form Builder')),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
@@ -27,7 +27,6 @@ class FormBuilderScreen extends StatelessWidget {
     );
   }
 }
-
 
 class FormBuilderExample extends StatefulWidget {
   const FormBuilderExample({super.key});
@@ -64,7 +63,9 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
             ]),
           ),
 
-          const SizedBox(height: kDefaultPadding,),
+          const SizedBox(
+            height: kDefaultPadding,
+          ),
 
           /// Surname
           FormBuilderTextField(
@@ -84,7 +85,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
             ]),
           ),
 
-          const SizedBox(height: kDefaultPadding,),
+          const SizedBox(height: kDefaultPadding),
 
           /// Email
           FormBuilderTextField(
@@ -104,7 +105,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
             ]),
           ),
 
-          const SizedBox(height: kDefaultPadding,),
+          const SizedBox(height: kDefaultPadding),
 
           /// Date
           FormBuilderDateTimePicker(
@@ -129,7 +130,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
             ]),
           ),
 
-          const SizedBox(height: kDefaultPadding,),
+          const SizedBox(height: kDefaultPadding),
 
           /// Dropdown
           FormBuilderDropdown<String>(
@@ -139,18 +140,17 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
               border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
               hintText: 'Select Gender',
             ),
-            validator: FormBuilderValidators.compose(
-                [FormBuilderValidators.required()]),
+            validator: FormBuilderValidators.compose([FormBuilderValidators.required()]),
             items: ['Male', 'Female']
                 .map((gender) => DropdownMenuItem(
-              alignment: AlignmentDirectional.center,
-              value: gender,
-              child: Text(gender),
-            ))
+                      alignment: AlignmentDirectional.center,
+                      value: gender,
+                      child: Text(gender),
+                    ))
                 .toList(),
           ),
 
-          const SizedBox(height: kDefaultPadding,),
+          const SizedBox(height: kDefaultPadding),
 
           /// Checkbox
           FormBuilderCheckbox(
@@ -159,7 +159,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
             title: const Text('My Checkbox'),
           ),
 
-          const SizedBox(height: kDefaultPadding,),
+          const SizedBox(height: kDefaultPadding),
 
           /// Chips
           FormBuilderFilterChip(
@@ -168,13 +168,15 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
               border: InputBorder.none,
             ),
             options: const [
-              FormBuilderChipOption(value: 'Chip 1', avatar: CircleAvatar(child: Text('C')),),
-              FormBuilderChipOption(value: 'Chip 2', avatar: CircleAvatar(child: Text('C')),),
-              FormBuilderChipOption(value: 'Chip 3', avatar: CircleAvatar(child: Text('C')),),
+              FormBuilderChipOption(value: 'Chip 1', avatar: CircleAvatar(child: Text('C'))),
+              FormBuilderChipOption(value: 'Chip 2', avatar: CircleAvatar(child: Text('C'))),
+              FormBuilderChipOption(value: 'Chip 3', avatar: CircleAvatar(child: Text('C'))),
             ],
           ),
 
-          const SizedBox(height: 20,),
+          const SizedBox(
+            height: 20,
+          ),
 
           /// Submit Button
           ElevatedButton(onPressed: () => _onPressed(context), child: const Text('Done')),
@@ -185,14 +187,14 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
 
   _onPressed(BuildContext context) {
     bool isFormValid = _formKey.currentState?.validate() ?? false;
-    if(isFormValid) {
+    if (isFormValid) {
       _formKey.currentState!.save();
       Map<String, dynamic> formValues = _formKey.currentState!.value;
       _showDialog(context, formValues);
     }
   }
 
-  _showDialog(BuildContext context, Map<String,dynamic> formValues) {
+  _showDialog(BuildContext context, Map<String, dynamic> formValues) {
     return showGeneralDialog(
       barrierDismissible: true,
       barrierLabel: '',
@@ -204,28 +206,27 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
         );
       },
       context: context,
-      pageBuilder: (context, anim1 , anim2) {
+      pageBuilder: (context, anim1, anim2) {
         return Dialog(
-          insetPadding: const EdgeInsets.symmetric(horizontal: 20,),
-          shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(12))),
+          insetPadding: const EdgeInsets.symmetric(horizontal: 20),
+          shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
           child: Container(
             width: 600,
             padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                const SizedBox(height: 5,),
-                const Text('Thanks!', style: TextStyle(color: Colors.black87, fontSize: 25, fontWeight: FontWeight.w900),),
-                const SizedBox(height: 8,),
+                const SizedBox(height: 5),
+                const Text('Thanks!', style: TextStyle(color: Colors.black87, fontSize: 25, fontWeight: FontWeight.w900)),
+                const SizedBox(height: 8),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Name: ${formValues['name']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
-                    Text('Surname: ${formValues['surname']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
-                    Text('Email: ${formValues['email']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
-                    Text('Date & Time: ${DateFormat.yMd().add_jm().format(formValues['date'])}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
-                    Text('Gender: ${formValues['gender']}', style: const TextStyle(color: Colors.black54, fontSize: 16,),),
+                    Text('Name: ${formValues['name']}', style: const TextStyle(color: Colors.black54, fontSize: 16)),
+                    Text('Surname: ${formValues['surname']}', style: const TextStyle(color: Colors.black54, fontSize: 16)),
+                    Text('Email: ${formValues['email']}', style: const TextStyle(color: Colors.black54, fontSize: 16)),
+                    Text('Date & Time: ${DateFormat.yMd().add_jm().format(formValues['date'])}', style: const TextStyle(color: Colors.black54, fontSize: 16)),
+                    Text('Gender: ${formValues['gender']}', style: const TextStyle(color: Colors.black54, fontSize: 16)),
                   ],
                 ),
               ],
@@ -236,4 +237,3 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
     );
   }
 }
-

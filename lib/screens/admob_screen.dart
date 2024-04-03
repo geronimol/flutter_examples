@@ -12,11 +12,11 @@ class AdmobScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Admob'),),
+      appBar: AppBar(title: const Text('Admob')),
       body: SafeArea(
-          child: defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS
-              ? const AdmobWidget()
-              : const Center(child: Text('Admob can only run on Android or iOS platforms.')),
+        child: defaultTargetPlatform == TargetPlatform.android || defaultTargetPlatform == TargetPlatform.iOS
+            ? const AdmobWidget()
+            : const Center(child: Text('Admob can only run on Android or iOS platforms.')),
       ),
     );
   }
@@ -91,7 +91,6 @@ class _AdmobWidgetState extends State<AdmobWidget> {
     );
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -108,17 +107,18 @@ class _AdmobWidgetState extends State<AdmobWidget> {
                 child: AdWidget(ad: _bannerAd!),
               ),
             ),
-
           if (_interstitialAd != null)
             Padding(
               padding: const EdgeInsets.all(kDefaultPadding),
-              child: ElevatedButton(onPressed: () {
-                _interstitialAd?.show();
-              }, child: const Text('Show interstitial'),),
+              child: ElevatedButton(
+                onPressed: () {
+                  _interstitialAd?.show();
+                },
+                child: const Text('Show interstitial'),
+              ),
             ),
         ],
       ),
     );
   }
 }
-

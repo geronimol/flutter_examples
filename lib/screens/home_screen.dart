@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('My Flutter Examples'),),
+      appBar: AppBar(title: const Text('My Flutter Examples')),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
@@ -37,23 +37,23 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Text.rich(
                     textAlign: TextAlign.left,
-                    TextSpan(
-                        style: const TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w500),
-                        children: [
-                          const TextSpan(
-                            text: 'You can check my projects ',
-                          ),
-                          /// Link
-                          TextSpan(
-                            text: 'here',
-                            style: const TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () { launchUrl(Uri.parse(kProjectsUrl));
-                              },
-                          ),
-                        ]
-                    ),
+                    TextSpan(style: const TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w500), children: [
+                      const TextSpan(
+                        text: 'You can check my projects ',
+                      ),
+
+                      /// Link
+                      TextSpan(
+                        text: 'here',
+                        style: const TextStyle(decoration: TextDecoration.underline, color: Colors.blue),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            launchUrl(Uri.parse(kProjectsUrl));
+                          },
+                      ),
+                    ]),
                   ),
+
                   /// Link
                   Link(
                     uri: Uri.parse(kMyWebsiteUrl),
@@ -62,60 +62,61 @@ class HomeScreen extends StatelessWidget {
                       onPressed: followLink,
                       child: const Text(
                         'Link to my website',
-                        style: TextStyle(decoration: TextDecoration.underline),),
+                        style: TextStyle(decoration: TextDecoration.underline),
+                      ),
                     ),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AnimationsScreen())),
                     child: const Text('Animations'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CommonFormScreen())),
                     child: const Text('Common Form'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FormBuilderScreen())),
                     child: const Text('Form Builder'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const DataTableScreen())),
                     child: const Text('Data Table'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const FetchJsonDataScreen())),
                     child: const Text('Fetch JSON Data'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CountdownToDateScreen())),
                     child: const Text('Countdown to date'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AdmobScreen())),
                     child: const Text('Admob'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const GoogleMapsScreen())),
                     child: const Text('Google Maps'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const TabBarScreen())),
                     child: const Text('TabBar'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CarouselSliderScreen())),
                     child: const Text('Carousel Slider'),
                   ),
-                  const SizedBox(height: kDefaultPadding,),
+                  const SizedBox(height: kDefaultPadding),
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SliversScreen())),
                     child: const Text('Slivers'),

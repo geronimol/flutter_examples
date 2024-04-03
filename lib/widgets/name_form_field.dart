@@ -15,7 +15,7 @@ class NameFormField extends StatelessWidget {
         label: Text(label),
         enabledBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(15.0),
-          borderSide:  const BorderSide(color: Colors.grey ),
+          borderSide: const BorderSide(color: Colors.grey),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(10.0),
@@ -37,7 +37,7 @@ class NameFormField extends StatelessWidget {
       ],
       validator: (s) {
         final validCharacters = RegExp(r'^[a-zA-ZñÑ\s]+$');
-        if(s == null || s.trim().isEmpty || !validCharacters.hasMatch(s) || s.trim().length < 2) {
+        if (s == null || s.trim().isEmpty || !validCharacters.hasMatch(s) || s.trim().length < 2) {
           return errorMessage;
         }
         return null;
