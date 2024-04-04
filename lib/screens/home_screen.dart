@@ -14,6 +14,7 @@ import 'fetch_json_data_screen.dart';
 import 'form_builder_screen.dart';
 import 'google_maps_screen.dart';
 import 'slivers_screen.dart';
+import 'sticky_headers_screen.dart';
 import 'tabbar_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -120,6 +121,11 @@ class HomeScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const SliversScreen())),
                     child: const Text('Slivers'),
+                  ),
+                  const SizedBox(height: kDefaultPadding),
+                  ElevatedButton(
+                    onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const StickyHeadersScreen())),
+                    child: const Text('Sticky Headers'),
                   ),
                 ],
               ),
