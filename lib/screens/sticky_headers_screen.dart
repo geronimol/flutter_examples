@@ -43,7 +43,7 @@ class StickyHeaderList extends StatelessWidget {
     return SliverStickyHeader.builder(
       builder: (context, state) => Container(
         height: 70,
-        color: Colors.blueAccent.withOpacity(1 - state.scrollPercentage),
+        color: Colors.blueAccent.withValues(alpha: 1 - state.scrollPercentage),
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Row(
           children: [

@@ -293,7 +293,7 @@ class _ContainerAnimationWidgetState extends State<ContainerAnimationWidget> {
           onPressed: () {
             setState(() {
               if (height <= maxSize || width <= maxSize) {
-                color = Color((Random().nextDouble() * 0xFFFFFF).toInt()).withOpacity(1.0);
+                color = Color((Random().nextDouble() * 0xFFFFFF).toInt()).withValues(alpha: 1.0);
                 if (height <= width) {
                   height += 10;
                 } else {

@@ -59,7 +59,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
             textInputAction: TextInputAction.next,
             validator: FormBuilderValidators.compose([
               FormBuilderValidators.required(errorText: 'Please enter a name.'),
-              FormBuilderValidators.match(r'^[a-zA-ZñÑ\s]+$', errorText: 'Only alphabetic characters are allowed.'),
+              FormBuilderValidators.match(RegExp(r'^[a-zA-ZñÑ\s]+$'), errorText: 'Only alphabetic characters are allowed.'),
             ]),
           ),
 
@@ -81,7 +81,7 @@ class _FormBuilderExampleState extends State<FormBuilderExample> {
             textInputAction: TextInputAction.next,
             validator: FormBuilderValidators.compose([
               FormBuilderValidators.required(errorText: 'Please enter a surname.'),
-              FormBuilderValidators.match(r'^[a-zA-ZñÑ\s]+$', errorText: 'Only alphabetic characters are allowed.'),
+              FormBuilderValidators.match(RegExp(r'^[a-zA-ZñÑ\s]+$'), errorText: 'Only alphabetic characters are allowed.'),
             ]),
           ),
 
