@@ -114,7 +114,7 @@ class _CommonFormState extends State<CommonForm> {
     );
   }
 
-  _onConfirmButtonPressed() {
+  void _onConfirmButtonPressed() {
     bool isFormValid = _formKey.currentState!.validate();
     if (isFormValid) {
       final message = 'Thank you ${controllerFirstName.text} ${controllerLastName.text}.';

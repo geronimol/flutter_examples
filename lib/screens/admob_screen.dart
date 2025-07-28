@@ -47,7 +47,7 @@ class _AdmobWidgetState extends State<AdmobWidget> {
     super.dispose();
   }
 
-  loadBanner() {
+  void loadBanner() {
     BannerAd(
       adUnitId: AdHelper.bannerAdUnitId,
       size: AdSize.banner,
@@ -66,7 +66,7 @@ class _AdmobWidgetState extends State<AdmobWidget> {
     ).load();
   }
 
-  loadInterstitialAd() {
+  void loadInterstitialAd() {
     InterstitialAd.load(
       adUnitId: AdHelper.interstitialAdUnitId,
       request: const AdRequest(),

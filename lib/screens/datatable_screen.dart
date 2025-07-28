@@ -43,7 +43,7 @@ class _DataTableWidgetState extends State<DataTableWidget> {
     super.initState();
   }
 
-  loadChampionPlayersList() {
+  void loadChampionPlayersList() {
     playersList.add(ChampionPlayer(name: 'Roger Federer', totalGrandSlams: 20));
     playersList.add(ChampionPlayer(name: 'Rafael Nadal', totalGrandSlams: 20));
     playersList.add(ChampionPlayer(name: 'Novak Djokovic', totalGrandSlams: 20));
